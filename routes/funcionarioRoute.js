@@ -1,6 +1,5 @@
 import express from 'express';
 const router = express.Router();
-//Busca o funcionarioController
 import funcionarioController from '../controllers/funcionarioController.js'
 const controle = new funcionarioController();
 

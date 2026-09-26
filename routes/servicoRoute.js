@@ -1,7 +1,6 @@
 import express from 'express';
 import multer from 'multer';
 const router = express.Router();
-//Busca o servicoController
 import servicoController from '../controllers/servicoController.js'
 const controle = new servicoController();
 

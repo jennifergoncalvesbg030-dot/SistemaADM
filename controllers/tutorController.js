@@ -1,4 +1,3 @@
-//importar o Model
 import Tutor from '../models/Tutor.js'
 
 export default class tutorController{
@@ -10,7 +9,6 @@ export default class tutorController{
             res.render(caminhoBase + "add")
         }
         this.add = async(req, res)=>{
-            //cria o Tutor
            
             await Tutor.create({
                 nome: req.body.nome,
@@ -31,7 +29,6 @@ export default class tutorController{
         }
 
          this.openEdt = async(req, res)=>{
-            //passar quem eu quero editar
             const id = req.params.id
             const tutor = await Tutor.findById(id)
             res.render(caminhoBase + "edt", {tutor})

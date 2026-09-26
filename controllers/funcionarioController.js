@@ -1,4 +1,3 @@
-//importar o Model
 import Funcionario from '../models/Funcionario.js'
 
 export default class funcionarioController{
@@ -10,7 +9,6 @@ export default class funcionarioController{
             res.render(caminhoBase + "add")
         }
         this.add = async(req, res)=>{
-            //cria o Funcionario
            
             await Funcionario.create({
                 nome: req.body.nome,
@@ -31,7 +29,6 @@ export default class funcionarioController{
         }
 
          this.openEdt = async(req, res)=>{
-            //passar quem eu quero editar
             const id = req.params.id
             const funcionario = await Funcionario.findById(id)
             res.render(caminhoBase + "edt", {funcionario})

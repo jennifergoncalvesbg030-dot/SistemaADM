@@ -1,6 +1,5 @@
 import express from 'express';
 const router = express.Router();
-//Busca o tutorController
 import tutorController from '../controllers/tutorController.js'
 const controle = new tutorController();
 

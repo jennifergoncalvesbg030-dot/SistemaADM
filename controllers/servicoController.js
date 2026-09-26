@@ -1,4 +1,3 @@
-//importar o Model
 import Servico from '../models/Servico.js'
 import Animal from '../models/Animal.js'
 import Tutor from '../models/Tutor.js'
@@ -10,7 +9,6 @@ export default class servicoController{
         this.caminhoBase = caminhoBase
     
         this.openAdd = async(req, res)=>{
-            // Buscar as entidades relacionadas pra popular os selects
             const animais = await Animal.find({})
             const tutores = await Tutor.find({})
             const funcionarios = await Funcionario.find({})
@@ -21,7 +19,6 @@ export default class servicoController{
             })
         }
         this.add = async(req, res)=>{
-            //cria o Servico
 
             let janimal = null;
             if(req.body.animal){

@@ -1,6 +1,5 @@
 import express from 'express';
 const router = express.Router();
-//Busca o animalController
 import animalController from '../controllers/animalController.js'
 const controle = new animalController();
 
