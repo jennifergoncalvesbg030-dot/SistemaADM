@@ -1,0 +1,33 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Serviços</h1>
+    <div>
+        <form action="/servico/lst" method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/servico/add">+ Serviço</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Animal</td>
+            <td>Preço</td>
+            <td>Duração</td>
+            <td>Foto</td>
+            <td>Ações</td>
+        </tr>
+      
+        <%for (const {id, nome, animal, preco, duracaoMinutos, foto} of Servicos) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=animal ? animal.nome : ''%></td>
+            <td><%=preco%></td>
+            <td><%=duracaoMinutos%></td>
+            <td><% if(foto){ %><img src="<%=foto%>" width="80" height="80"><% } %></td>
+            <td><a href="/servico/edt/<%=id%>">Editar</a>
+            <a href="/servico/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

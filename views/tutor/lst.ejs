@@ -1,0 +1,27 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Tutores</h1>
+    <div>
+        <form action="/tutor/lst" method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/tutor/add">+ Tutor</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Telefone</td>
+            <td>Ações</td>
+        </tr>
+      
+        <%for (const {id, nome, telefone} of tutores) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=telefone%></td>
+            <td><a href="/tutor/edt/<%=id%>">Editar</a>
+            <a href="/tutor/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

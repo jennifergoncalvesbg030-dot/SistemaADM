@@ -1,0 +1,29 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Animais</h1>
+    <div>
+        <form action="/animal/lst" method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/animal/add">+ Animal</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Espécie</td>
+            <td>Raça</td>
+            <td>Ações</td>
+        </tr>
+      
+        <%for (const {id, nome, especie, raca} of animais) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=especie%></td>
+            <td><%=raca%></td>
+             <td><a href="/animal/edt/<%=id%>">Editar</a>
+            <a href="/animal/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

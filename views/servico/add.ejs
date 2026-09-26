@@ -1,0 +1,42 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Adicionar Serviço</h1>
+<div>
+<a href="/servico/lst">Listar</a>
+</div>
+<div>
+    <form  method="post" enctype="multipart/form-data">
+        <label>Nome do Serviço:</label>
+        <input type="text" name="nome" required><br>
+        <label>Animal:</label>
+        <select name="animal" id="animal">
+            <option value="">selecione</option>
+            <%Animais.forEach(function(animal){%>
+            <option value='<%=animal.id%>'><%=animal.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Tutor:</label>
+        <select name="tutor" id="tutor">
+            <option value="">selecione</option>
+            <%Tutores.forEach(function(tutor){%>
+            <option value='<%=tutor.id%>'><%=tutor.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Funcionário responsável:</label>
+        <select name="funcionario" id="funcionario">
+            <option value="">selecione</option>
+            <%Funcionarios.forEach(function(funcionario){%>
+            <option value='<%=funcionario.id%>'><%=funcionario.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Preço:</label>
+        <input type="number" name="preco" required  ><br>
+        <label>Duração (minutos):</label>
+        <input type="number" name="duracaoMinutos" required><br>
+        <label>Foto (do animal no atendimento):</label>
+        <input type="file" id="foto" name="foto" required><br>
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

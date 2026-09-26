@@ -1,0 +1,52 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Editar Serviço</h1>
+<div>
+<a href="/servico/lst">Ver Lista de Serviços</a>
+</div>
+<div>
+    <form  method="post" enctype="multipart/form-data">
+    
+        <label>Nome do Serviço:</label>
+        <input type="text" name="nome" 
+        value="<%=Servico.nome%>" required><br>
+        <label>Animal:</label>
+        <select name="animal" id="animal">
+            <option value="">selecione</option>
+            <%Animais.forEach(function(animal){%>
+            <option value='<%=animal.id%>'
+            <%=(Servico.animal && animal.id.toString() === Servico.animal.toString())?'selected':''%>>
+            <%=animal.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Tutor:</label>
+        <select name="tutor" id="tutor">
+            <option value="">selecione</option>
+            <%Tutores.forEach(function(tutor){%>
+            <option value='<%=tutor.id%>'
+            <%=(Servico.tutor && tutor.id.toString() === Servico.tutor.toString())?'selected':''%>>
+            <%=tutor.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Funcionário responsável:</label>
+        <select name="funcionario" id="funcionario">
+            <option value="">selecione</option>
+            <%Funcionarios.forEach(function(funcionario){%>
+            <option value='<%=funcionario.id%>'
+            <%=(Servico.funcionario && funcionario.id.toString() === Servico.funcionario.toString())?'selected':''%>>
+            <%=funcionario.nome%></option>
+            <%})%>
+        </select><br>
+        <label>Preço:</label>
+        <input type="number" name="preco" 
+        value="<%=Servico.preco%>" required><br>
+        <label>Duração (minutos):</label>
+        <input type="number" name="duracaoMinutos" 
+        value="<%=Servico.duracaoMinutos%>" required><br>
+        <label>Trocar foto:</label>
+        <input type="file" id="foto" name="foto" required><br>
+        <button type="submit">Editar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

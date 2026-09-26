@@ -1,0 +1,17 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Adicionar Funcionário</h1>
+<div>
+<a href="/funcionario/lst">Ver Lista de Funcionários</a>
+</div>
+<div>
+    <form  method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome" required><br>
+        <label>Cargo:</label>
+        <input type="text" name="cargo" required><br>
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

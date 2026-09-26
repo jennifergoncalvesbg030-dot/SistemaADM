@@ -1,0 +1,19 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Adicionar Animal</h1>
+<div>
+<a href="/animal/lst">Ver Lista de Animais</a>
+</div>
+<div>
+    <form  method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome" required><br>
+        <label>Espécie:</label>
+        <input type="text" name="especie" required><br>
+        <label>Raça:</label>
+        <input type="text" name="raca" required><br>
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>
