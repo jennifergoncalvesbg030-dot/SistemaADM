@@ -1,4 +1,3 @@
-//importar o Model
 import Animal from '../models/Animal.js'
 
 export default class animalController{
@@ -10,7 +9,6 @@ export default class animalController{
             res.render(caminhoBase + "add")
         }
         this.add = async(req, res)=>{
-            //cria o Animal
            
             await Animal.create({
                 nome: req.body.nome,
@@ -32,7 +30,6 @@ export default class animalController{
         }
 
          this.openEdt = async(req, res)=>{
-            //passar quem eu quero editar
             const id = req.params.id
             const animal = await Animal.findById(id)
             res.render(caminhoBase + "edt", {animal})

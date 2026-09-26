@@ -71,7 +71,6 @@ export default class servicoController{
         }
 
          this.openEdt = async(req, res)=>{
-            //passar quem eu quero editar
             const id = req.params.id
             const servico = await Servico.findById(id)
             const animais = await Animal.find({})
